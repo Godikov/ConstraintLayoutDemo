@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.humu.constraintlayoutdemo.Demo6Activity">
+
+    <!--
+        layout_constraintDimensionRatio
+        至少需要将宽高中的一个设置为0dp。为了约束一个特定的边，基于另一个边的尺寸，
+        可以预先附加W，或H以逗号隔开。
+
+        Guideline
+        是虚拟对象，并不会占用实际的空间，但可以帮助我们更好更精细地控制布局。
+        综上的需求变化我们可以相对于父控件任意改变控件大小，控件的位置，从而能够更好的适配各大屏幕。
+    -->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintDimensionRatio="16:9"
+        app:srcCompat="@drawable/sky"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        android:layout_marginTop="0dp"/>
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline2"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"/>
+</android.support.constraint.ConstraintLayout>

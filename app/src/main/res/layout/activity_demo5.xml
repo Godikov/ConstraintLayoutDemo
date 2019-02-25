@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.humu.constraintlayoutdemo.Demo5Activity">
+
+    <!--
+        layout_goneMarginStart
+        layout_goneMarginEnd
+        layout_goneMarginLeft
+        layout_goneMarginTop
+        layout_goneMarginRight
+        layout_goneMarginBottom
+        当约束目标的可见性为View.GONE时，设置不同的边距值
+    -->
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:text="Gone"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_goneMarginLeft="5dp"
+        tools:layout_editor_absoluteY="16dp"
+        app:layout_constraintStart_toEndOf="@+id/button7"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"/>
+</android.support.constraint.ConstraintLayout>

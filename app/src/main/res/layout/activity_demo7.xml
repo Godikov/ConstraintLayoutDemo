@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.humu.constraintlayoutdemo.Demo7Activity">
+
+    <!--
+        Barrier，直译为障碍、屏障。在约束布局中，可以使用属性constraint_referenced_ids属性来引用多个带约束的组件，
+        从而将它们看作一个整体，Barrier 的介入可以完成很多其他布局不能完成的功能
+
+        barrierDirection
+        指定方向
+        constraint_referenced_ids
+        引用的控件 id（多个id以逗号隔开）。
+
+    -->
+
+    <TextView
+        android:id="@+id/tv_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="账号："
+        app:layout_constraintBottom_toBottomOf="@+id/et_account"
+        app:layout_constraintTop_toTopOf="@+id/et_account"/>
+
+    <TextView
+        android:id="@+id/tv_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="密码："
+        app:layout_constraintBottom_toBottomOf="@+id/et_pwd"
+        app:layout_constraintTop_toTopOf="@+id/et_pwd"/>
+
+    <EditText
+        android:id="@+id/et_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="请输入账号"
+        app:layout_constraintLeft_toLeftOf="@+id/barrier"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/et_pwd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="请输入密码"
+        app:layout_constraintLeft_toLeftOf="@+id/barrier"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_account"/>
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="tv_account,tv_pwd"/>
+
+</android.support.constraint.ConstraintLayout>
